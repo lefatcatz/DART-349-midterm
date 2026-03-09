@@ -1,0 +1,205 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F4F4F4;
+    color: #1B1B3A;
+}
+
+header {
+    /* background-color: #ffffff; */
+    background-color: #B0B0B0;
+    background-image: url('images/catandred.png');
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: contain;
+    padding: 60px;
+    padding-right: 220px;
+    text-align: left;
+
+       font-family: 'Aclonica', sans-serif;
+    
+    color: #131313;
+}
+h1{
+    font-size: 50px;
+      margin-bottom: 1em;
+}
+h2{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.should-be-blue {
+    color: #ffffff !important;
+    font-weight: bold;
+    padding-left: 40px;
+}
+
+
+/* Hi stinky :D */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+background-color: #FF5152;
+    padding: 20px;
+}
+.clicklink {
+    display: flex;
+    justify-content: left;
+    gap: 50px;
+    
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #FF5A5F;
+}
+.rounded-box {
+    padding: 75px;
+  background-color: lightgray;
+  border-radius: 75px;
+
+  /* Center text */
+
+
+  font-size: 20px;
+  font-weight: ;
+}
+.flip {
+    transform: scaleX(-1);
+}
+.welcome-section,
+
+.thankyou-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 60px;
+    gap: 40px;
+}
+
+.text-box {
+    flex: 1;
+}
+
+.image-box {
+    flex: 1;
+}
+
+.thankyou-section .image-box {
+    display: flex;
+    justify-content: end;
+
+}
+
+.image-box img {
+    width: 100%;
+    max-width: 300px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1B1B3A;
+    color: white;
+}
+
+.content-page {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.style-guide {
+    display: flex;
+    gap: 20px;
+}
+
+.color-box {
+    padding: 40px;
+    color: white;
+    font-weight: bold;
+}
+
+.red { background-color: #FF5A5F; }
+.dark { background-color: #1B1B3A; }
+.light { background-color: #F4F4F4; color: black; }
+
+.bottom-design {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 60px;
+    position: relative;
+}
+
+/* LEFT SIDE */
+.bottom-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; 
+    background-image: url("images/bigred.svg");
+    background-repeat: no-repeat;
+
+}
+
+.big-circle {
+    width: 200px;
+    height: 200px;
+    background-color: #FF5A5F;
+    border-radius: 50%;
+}
+
+/* RIGHT SIDE */
+.bottom-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+/* Rectangles */
+.social-rect {
+    width: 80px;
+    height: 120px;
+    background-color: #FF5A5F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-rect a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.social-rect:hover {
+    background-color: #1B1B3A;
+    transition: 0.3s;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #1B1B3A;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
