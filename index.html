@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,29 +18,183 @@
         
         <p>Learning Sign Language Made Friendly & Accessible</p>
     </div>
-    
-
-
 </header>
 
 <nav class="navbar">
     <a class="should-be-blue" href="index.html">Sign Language Perfected</a>
     <div class="clicklink">
     <a href="index.html">Home</a>
-    <a href="figma.html">Figma</a>
-    <a href="website.html">Website</a></div>
+    <a href="figma.html">Alphabet</a>
+    <a href="website.html">Youtube</a>
+    <a href="class.html">Classes</a>
+    <a href="test.html">Sources</a></div>
 </nav>
+
+<style>
+  .ticker-wrap {
+    width: 100%;
+    background: #201838;
+    overflow: hidden;
+    padding: 10px 0;
+    white-space: nowrap;
+  }
+
+  .ticker-track {
+    display: inline-flex;
+    animation: ticker-scroll 18s linear infinite;
+  }
+
+  .ticker-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .ticker-item {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .ticker-dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+  }
+</style>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <!-- First set -->
+    <span class="ticker-item">Sign Language <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Learn to Sign <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Connect with Everyone <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Break Barriers <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Find Your Voice <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Deaf Community <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Start Today <span class="ticker-dot"></span></span>
+    <!-- Duplicate for seamless loop -->
+    <span class="ticker-item">Sign Language <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Learn to Sign <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Connect with Everyone <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Break Barriers <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Find Your Voice <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Deaf Community <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Start Today <span class="ticker-dot"></span></span>
+  </div>
+</div>
+
+
+<style>
+  @keyframes bounce-in {
+    0%   { opacity: 0; transform: translateY(28px); }
+    55%  { opacity: 1; transform: translateY(-6px); }
+    75%  { transform: translateY(3px); }
+    90%  { transform: translateY(-2px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .statement-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #888;
+    margin: 0 0 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    animation: bounce-in 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.1s forwards;
+  }
+
+  .statement-label::after {
+    content: '';
+    display: block;
+    height: 0.5px;
+    flex: 1;
+    background: #e0e0e0;
+  }
+
+  .statement-box {
+    border-left: 2.5px solid #5DCAA5;
+    padding: 1.5rem 1.75rem;
+    background: #f9f9f7;
+    border-radius: 0 12px 12px 0;
+    max-width: 680px;
+    overflow: hidden;
+  }
+
+  .bounce-line {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.85;
+    color: #1a1a1a;
+    margin: 0;
+    opacity: 0;
+    display: block;
+    animation: bounce-in 0.65s cubic-bezier(0.34,1.56,0.64,1) forwards;
+  }
+
+  .bounce-line + .bounce-line { margin-top: 1.1em; }
+</style>
+
+<section class="welcome-section">
+<div class="text-box rounded-box">
+        <style>
+  @keyframes heartbeat {
+    0%   { transform: scale(1); }
+    14%  { transform: scale(1.07); }
+    28%  { transform: scale(1); }
+    42%  { transform: scale(1.04); }
+    56%  { transform: scale(1); }
+    100% { transform: scale(1); }
+  }
+
+  h2 {
+    display: inline-block;
+    animation: heartbeat 1.4s ease-in-out infinite;
+    transform-origin: center;
+  }
+</style>
+
+<div style="display: flex; justify-content: center; align-items: center;">
+  <h2 id="heading">Artist Statement</h2>
+</div>
+
+        <p class="bounce-line" style="animation-delay: 0.35s">
+        Having always thought everyone should know even a few signs‚ I loved that as a waitress I got to communicate with Deaf customers like I'd always wanted to‚ but hadn't had the chance to before․</p>
+  <p class="bounce-line" style="animation-delay: 0.57s">When COVID-19 lockdowns pushed me into my apartment‚ it was my first time being part of an online community․ I spent hours and hours with people in various virtual spaces‚ learning to sign in VR‚ and talking to a huge variety of people‚ all without sound․ It opened my eyes to how powerful and accessible this language could be․</p>
+<p class="bounce-line" style="animation-delay: 0.79s">This website is the result of that journey‚ and is designed to lower the barrier to entry for sign language and give anyone who is curious a meaningful‚ approachable place to start․</p>
+
+        </p>
+</div>
+</section>
 
 
 
 <section class="welcome-section">
     <div class="text-box rounded-box">
-        <h2>Welcome</h2>
+        <div style="display: flex; justify-content: center; align-items: center;">
+  <h2 id="heading">Welcome</h2>
+</div>
         <p>
-            Sign Language Perfected is an educational activist website designed
-            to make basic sign language accessible to everyone. Through simple
-            visuals, step-by-step learning, and an inviting design, users can
-            begin understanding communication beyond spoken language.
+           <p class="bounce-line" style="animation-delay: 0.35s"> Sign Language Perfected is an educational activist website designed to make basic sign language accessible to everyone.</p>
+        <p class="bounce-line" style="animation-delay: 0.57s">  Through simple
+      visuals, step-by-step learning, and an inviting design, users can
+            begin understanding communication beyond spoken language.</p>
 
         </p>
     </div>
@@ -49,35 +204,6 @@
     </div>
 </section>
 
-<section class="thankyou-section">
-    <div class="image-box">
-        <img src="images/thank-you.gif" alt="Friendly cat" class="flip">
-    </div>
-
-    
- <div class="text-box rounded-box">
-        <h2>Thank You</h2>
-        <p>
-            This project promotes inclusivity and communication equality.
-            Everyone deserves to be understood. By learning even a few signs,
-            we create stronger and more compassionate communities.
-        </p>
-    </div>
-</section>
-
-
-<section class="welcome-section">
-    <div class="text-box rounded-box">
-        <h2>Please</h2>
-        <p>
-           Please have fun while learning this new language, sign language. Like any language, it takes time and practice, but it can also be an exciting and rewarding experience. As you learn new signs, you are also learning a new way to communicate and connect with others. Try to enjoy the process, be patient with yourself, and don’t be afraid to make mistakes. Every new sign you learn brings you one step closer to understanding and communicating with the Deaf community. Learning sign language can open the door to new friendships, new perspectives, and a deeper appreciation for different ways people express themselves.
-        </p>
-    </div>
-
-    <div class="image-box">
-        <img src="images/please.gif" alt="Cat teaching sign language">
-    </div>
-</section>
 
 <section class="bottom-design">
     <div class="bottom-left image-box">
@@ -85,17 +211,18 @@
      
     </div>
 
+
     <div class="bottom-right">
         <div class="social-rect">
-            <a href="https://www.linkedin.com" target="_blank">in</a>
+            <a href="https://www.linkedin.com/posts/william-vicars_learn-sign-language-lesson-01-asl-activity-7260687102990778369-6u3p" target="_blank">Linked</a>
         </div>
 
         <div class="social-rect">
-            <a href="https://www.instagram.com" target="_blank">ig</a>
+            <a href="https://www.instagram.com/sign.language101/" target="_blank">In</a>
         </div>
 
         <div class="social-rect">
-            <a href="https://twitter.com" target="_blank">x</a>
+            <a href="https://www.tiktok.com/@learnhowtosign" target="_blank">TikTok</a>
         </div>
     </div>
  

@@ -68,20 +68,20 @@ background-color: #FF5152;
 }
 .rounded-box {
     padding: 75px;
-  background-color: lightgray;
-  border-radius: 75px;
+    background-color: lightgray;
+    border-radius: 75px;
 
-  /* Center text */
+    /* Center text */
 
 
-  font-size: 20px;
-  font-weight: ;
+    font-size: 20px;
+    font-weight: ;
 }
 .flip {
     transform: scaleX(-1);
 }
-.welcome-section,
 
+.welcome-section,
 .thankyou-section {
     display: flex;
     justify-content: space-around;
@@ -142,7 +142,6 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 60px;
     position: relative;
 }
 
@@ -201,5 +200,46 @@ footer {
     padding: 20px;
 }
 
+.ticker-wrap {
+    width: 100%;
+    background: #201838;
+    overflow: hidden;
+    padding: 10px 0;
+    white-space: nowrap;
+    margin-bottom: 40px;
+  }
 
+  .ticker-track {
+    display: inline-flex;
+    animation: ticker-scroll 18s linear infinite;
+  }
 
+  .ticker-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .ticker-item {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .ticker-dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+  }

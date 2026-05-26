@@ -26,27 +26,146 @@
     <a class="should-be-blue" href="index.html">Sign Language Perfected</a>
     <div class="clicklink">
     <a href="index.html">Home</a>
-    <a href="figma.html">Figma</a>
-    <a href="website.html">Website</a></div>
+    <a href="figma.html">Alphabet</a>
+    <a href="website.html">YouTube</a>
+    <a href="class.html">Classes</a>
+    <a href="test.html">Sources</a></div>
 
 </nav>
 
-<iframe
-  style="border: 1px solid rgba(0, 0, 0, 0.1);"
-  width="100%"
-  height="800"
-  src="https://embed.figma.com/proto/VMMK2dqJCYkSu5JYsqixwb/Untitled?node-id=0-1&t=vt9RqkBJCUfoH2Ro-1&embed-host=localhost"
-  allowfullscreen
->
-</iframe>
-<iframe
-  style="border: 1px solid rgba(0, 0, 0, 0.1);"
-  width="100%"
-  height="800"
-  src="https://embed.figma.com/proto/jrEOSph25OyrGd0ABQBdOv/Untitled?node-id=1-19&t=ivJoMw4NTMeywKbv-1&embed-host=localhost"
-  allowfullscreen
->
-</iframe>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <!-- First set -->
+    <span class="ticker-item">Sign Language <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Learn to Sign <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Connect with Everyone <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Break Barriers <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Find Your Voice <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Deaf Community <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Start Today <span class="ticker-dot"></span></span>
+    <!-- Duplicate for seamless loop -->
+    <span class="ticker-item">Sign Language <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Learn to Sign <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Connect with Everyone <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Break Barriers <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Find Your Voice <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Deaf Community <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Start Today <span class="ticker-dot"></span></span>
+  </div>
+</div>
+
+
+<style>
+  .alpha-wrap { padding: 1.5rem 0; max-width: 480px; margin: 0 auto; font-family: sans-serif; }
+  .alpha-box {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: 0.5px solid #ccc;
+    border-radius: 12px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .alpha-box img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .alpha-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    gap: 12px;
+  }
+  .alpha-btn {
+    width: 44px; height: 44px;
+    border: 0.5px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .alpha-btn:hover { background: #f5f5f5; }
+  .alpha-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .alpha-dots {
+    display: flex; flex-wrap: wrap;
+    gap: 5px; justify-content: center; flex: 1;
+  }
+  .alpha-dot {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 0.5px solid #ccc;
+    background: #fff;
+    font-size: 11px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    color: #888;
+    font-weight: 500;
+  }
+  .alpha-dot.active { background: #5DCAA5; border-color: #5DCAA5; color: #085041; }
+  .alpha-dot:hover:not(.active) { background: #f5f5f5; }
+  .alpha-counter {
+    font-size: 13px; color: #888;
+    text-align: center; margin-top: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+</style>
+
+<div class="alpha-wrap">
+  <div class="alpha-box">
+    <img id="letterImg" src="images/Letter A.png" alt="Letter A">
+  </div>
+
+  <div class="alpha-controls">
+    <button class="alpha-btn" id="prevBtn" onclick="go(-1)">&#8592;</button>
+    <div class="alpha-dots" id="dots"></div>
+    <button class="alpha-btn" id="nextBtn" onclick="go(1)">&#8594;</button>
+  </div>
+
+  <p class="alpha-counter" id="counter">A — 1 / 26</p>
+</div>
+
+<script>
+  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  let current = 0;
+
+  const dots = document.getElementById('dots');
+  letters.forEach((l, i) => {
+    const d = document.createElement('div');
+    d.className = 'alpha-dot' + (i === 0 ? ' active' : '');
+    d.textContent = l;
+    d.onclick = () => { current = i; update(); };
+    dots.appendChild(d);
+  });
+
+  function update() {
+    const l = letters[current];
+    document.getElementById('letterImg').src = 'images/Letter ' + l + '.png';
+    document.getElementById('letterImg').alt = 'Letter '  + l;
+    document.getElementById('counter').textContent = l + ' — ' + (current + 1) + ' / 26';
+    document.querySelectorAll('.alpha-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+    document.getElementById('prevBtn').disabled = current === 0;
+    document.getElementById('nextBtn').disabled = current === 25;
+  }
+
+  function go(dir) { current = Math.max(0, Math.min(25, current + dir)); update(); }
+
+  update();
+</script>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 40px;">
+  <iframe
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://www.youtube.com/embed/DBQINq0SsAw"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
 
 
 <section class="bottom-design">
@@ -57,15 +176,15 @@
 
     <div class="bottom-right">
         <div class="social-rect">
-            <a href="https://www.linkedin.com" target="_blank">in</a>
+            <a href="https://www.linkedin.com/posts/william-vicars_learn-sign-language-lesson-01-asl-activity-7260687102990778369-6u3p" target="_blank">Linked</a>
         </div>
 
         <div class="social-rect">
-            <a href="https://www.instagram.com" target="_blank">ig</a>
+            <a href="https://www.instagram.com/sign.language101/" target="_blank">In</a>
         </div>
 
         <div class="social-rect">
-            <a href="https://twitter.com" target="_blank">x</a>
+            <a href="https://www.tiktok.com/@learnhowtosign" target="_blank">TikTok</a>
         </div>
     </div>
  

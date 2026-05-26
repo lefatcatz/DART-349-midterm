@@ -56,126 +56,114 @@
 </div>
 
 
-
-<section class="welcome-section">
-    <div class="text-box rounded-box">
-        <h2>Please</h2>
-        <p>
-           Please have fun while learning this new language, sign language. Like any language, it takes time and practice, but it can also be an exciting and rewarding experience. As you learn new signs, you are also learning a new way to communicate and connect with others. 
-        </p>
-    </div>
-
-
-    <div class="image-box">
-        <img src="images/please.gif" alt="Cat teaching sign language">
-    </div>
-</section>
-
+<head>
 
 <style>
-  .video-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid rgba(26,26,24,0.12);
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #f5efe6;
+    --dark: #1a1410;
+    --muted: #6b5e52;
+    --btn-bg: #1B1B3A;
+    --btn-text: #f5efe6;
+    --accent: #c9b99a;
+    --card-radius: 18px;
   }
 
-  .video-card {
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 3/4;
-    border-right: 1px solid rgba(26,26,24,0.12);
-    background: #c8c4bb;
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 64px;
+    gap: 28px;
   }
 
-  .video-card:last-child { border-right: none; }
-
-  .video-card iframe {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0; left: 0;
-    border: none;
+  .headline {
+    font-family: 'Open Sans', sans-serif; 
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    /* color: var(--dark); */
   }
 
-  .video-card-label {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
-    color: #fff;
-    font-family: sans-serif;
-    pointer-events: none;
+  .subtext {
+    font-size: 20px;
+    line-height: 1.65;
+    /* color: var(--muted); */
+    max-width: 1000px;
+    font-weight: 300;
   }
 
-  .video-card-label .tag {
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    opacity: 0.75;
-    margin-bottom: 4px;
+  .cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 8px;
   }
 
-  .video-card-label .title {
-    font-size: 14px;
+  .btn-primary {
+    display: inline-block;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
     font-weight: 500;
+    padding: 16px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    width: fit-content;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.82; }
+
+  .link-secondary {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: underline;
+    cursor: pointer;
+    width: fit-content;
   }
 </style>
+</head>
+<body>
+<div class="page">
+  <div class="left">
+    <h1 class="headline">Find the right class for you!</h1>
+    <p class="subtext">The newly re-launched American Sign Language (ASL) program at Vanier Language School is offered in proud partnership with Eversa, a Montreal-based organization that works to remove barriers preventing Deaf and hard of hearing people from evolving in an equitable society. Eversa specialises in training, consultation and translation services.</p>
+    <a href="https://www.vaniercollege.qc.ca/conted/language-school/asl" target="_blank" class="btn-primary">
+      Vanier College – ASL Classes
+    </a>
 
-<div class="video-grid">
-
-  <!-- Card 1 -->
-  <div class="video-card">
-    <iframe src="https://www.youtube.com/embed/DLVC1ZACCkA"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-    <div class="video-card-label">
-      <p class="tag">Beginner</p>
-      <p class="title">25 ASL Phrases</p>
-    </div>
+    <a href="http://www.seeingvoicesmontreal.com/asl-classes.html" target="_blank" class="btn-primary">
+      Seeing Voices Montreal – ASL Classes
+    </a>
   </div>
-
-  <!-- Card 2 -->
-  <div class="video-card">
-    <iframe src="https://www.youtube.com/embed/RhQvlq-mZtA"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-    <div class="video-card-label">
-      <p class="tag">Essentials</p>
-      <p class="title">Learn Conversation</p>
-    </div>
-  </div>
-
-  <!-- Card 3 -->
-  <div class="video-card">
-    <iframe src="https://www.youtube.com/embed/4Ll3OtqAzyw"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-    <div class="video-card-label">
-      <p class="tag">Everyday</p>
-      <p class="title">150 Asl Signs</p>
-    </div>
-  </div>
-
-  <!-- Card 4 -->
-  <div class="video-card">
-    <iframe src="https://www.youtube.com/embed/0FcwzMq4iWg?start=18"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-    <div class="video-card-label">
-      <p class="tag">Community</p>
-      <p class="title">First 25 Signs</p>
-    </div>
-  </div>
-
 </div>
 
 
+</body>
+
+
+
+<section class="thankyou-section">  
+ <div class="text-box rounded-box">
+        <h2>Thank You</h2>
+        <p>
+            This project promotes inclusivity and communication equality.
+            Everyone deserves to be understood. By learning even a few signs,
+            we create stronger and more compassionate communities.
+        </p>
+    </div>
+
+    <div class="image-box" style="flex: none">
+        <img src="images/thank-you.gif" alt="Friendly cat">
+    </div>
+</section>
 
 
 <section class="bottom-design">
